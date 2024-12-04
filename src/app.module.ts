@@ -1,10 +1,18 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { RemindersModule } from './reminders/reminders.module';
+import { WaterIntakeModule } from './water-intake/water-intake.module';
+import { ProgressModule } from './progress/progress.module';
+import { StatsModule } from './stats/stats.module';
+import { RewardsModule } from './rewards/rewards.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    RemindersModule,
+    WaterIntakeModule,
+    ProgressModule,
+    StatsModule,
+    RewardsModule,
+  ],
 })
 export class AppModule {}
+
